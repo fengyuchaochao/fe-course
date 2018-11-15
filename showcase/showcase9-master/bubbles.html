@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- // outer 包裹 inner标签 -->
+  <div id='outer' style='margin: 100px 0 0 100px; width: 200px;height: 200px; background: red;'>
+    <!-- <div id="inner" style='margin-left:20px; width: 50px;height:50px; background: green;'></div> -->
+    <input type="text" id="inner">
+  </div>
+
+  <script>
+    var clickInner = document.getElementById('inner');
+    var clickouter = document.getElementById('outer');
+    clickInner.addEventListener('focus', function() {
+      console.log('inner show');
+    }, false);
+    clickouter.addEventListener('focus', function(e) {
+      e.stopPropagation();
+      e.cancelBubble = true;
+      console.log("e.bubbles", e.bubbles);  // 这里为什么一直是true？
+      console.log("e.eventPhase", e.eventPhase);
+      console.log("e.target", e.target);  // 事件委托
+    }, true);
+  </script>
+
+  <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event">参考</a>
+
+</body>
+
+</html>

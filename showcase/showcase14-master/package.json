@@ -1,0 +1,23 @@
+{
+  "name": "showcase14",
+  "version": "1.0.0",
+  "description": "### FCP VS DCL 你的疑问应该来自 First Contentful Paint (FCP) and DOMContentLoaded (DCL)，首先得看一下这两个的定义： https://developers.google.com/web/tools/chrome-user-experience-report/#first-paint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FE-star/showcase14.git"
+  },
+  "author": "yorts52 <yorts52@gmail.com> (https://yorts52.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FE-star/showcase14/issues"
+  },
+  "homepage": "https://github.com/FE-star/showcase14#readme",
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "microtime": "^2.1.8"
+  }
+}

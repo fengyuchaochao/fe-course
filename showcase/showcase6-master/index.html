@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>性能测试</title>
+    </head>
+    <body>
+        <script>
+        const useNow = false
+        const data = []
+        for (let i = 0, l = 100000; i < l; i++) {
+            data.push(Math.random() * 100000 | 0)
+        }
+
+        function task1(done) {
+            const secondBegin = useNow ? performance.now() : +new Date
+            const tmp = {}
+
+            for (let i = 0, l = data.length; i < l; i++) {
+                tmp[`data-${i}`] = data[i]
+            }
+            localStorage['data'] = tmp
+
+            const secondEnd = useNow ? performance.now() : +new Date
+
+            console.log('存在单个key中', secondEnd - secondBegin)
+
+            done && done()
+        }
+
+        function task2(done) {
+            const firstBegin = useNow ? performance.now() : +new Date
+
+            for (let i = 0, l = data.length; i < l; i++) {
+                localStorage[`data-${i}`] = data[i]
+            }
+
+            const firstEnd = useNow ? performance.now() : +new Date
+
+            console.log('存在多个key中', firstEnd - firstBegin)
+
+            done && done()
+        }
+
+        setTimeout(() => {
+            task1(() => {
+                setTimeout(() => {
+                    task2()
+                }, 100)
+            })
+        }, 100)
+        
+        </script>
+    </body>
+</html>

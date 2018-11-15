@@ -1,0 +1,29 @@
+{
+  "name": "showcase3",
+  "version": "0.0.1",
+  "description": "showcase",
+  "main": "index.js",
+  "scripts": {
+    "1": "node ./cases/1.global-module.js",
+    "2": "node ./cases/2.global-conflict.js",
+    "3": "node ./cases/3.common.js",
+    "4": "node ./cases/4.common-mean.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FE-star/showcase3.git"
+  },
+  "keywords": [
+    "showcase"
+  ],
+  "author": "Daniel Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FE-star/showcase3/issues"
+  },
+  "homepage": "https://github.com/FE-star/showcase3#readme",
+  "dependencies": {
+    "util-merge": "^1.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>this is a
+    <a href="#">link</a>
+  </p>
+</body>
+
+<script>
+  ['html', 'body', 'p', 'a'].forEach(targetName => {
+    let $element = document.getElementsByTagName(targetName)[0];
+    $element.addEventListener('click', function(event) {
+      // event.preventDefault();
+      // event.stopPropagation();
+      console.log(targetName, 'click', true);
+    }, true);
+    $element.addEventListener('click', function(event) {
+      // event.preventDefault();
+      // event.stopPropagation();
+      event.stopImmediatePropagation(); // https://stackoverflow.com/questions/5299740/stoppropagation-vs-stopimmediatepropagation/5299841
+      console.log(targetName, 'click', false);
+    }, false);
+    $element.addEventListener('click', function(event) {
+      document.body.style.backgroundColor = "#f00";
+    }, false);
+  });
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+{
+  "type": "stylesheet",
+  "stylesheet": {
+    "rules": [
+      {
+        "type": "charset",
+        "charset": "'utf-8'",
+        "position": {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 18
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "selectors": [
+          "p"
+        ],
+        "declarations": [
+          {
+            "type": "declaration",
+            "property": "padding",
+            "value": "2px 3px",
+            "position": {
+              "start": {
+                "line": 4,
+                "column": 3
+              },
+              "end": {
+                "line": 4,
+                "column": 19
+              }
+            }
+          },
+          {
+            "type": "declaration",
+            "property": "color",
+            "value": "rgba(0,0,0,0.5)",
+            "position": {
+              "start": {
+                "line": 5,
+                "column": 3
+              },
+              "end": {
+                "line": 5,
+                "column": 25
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "line": 6,
+            "column": 2
+          }
+        }
+      }
+    ],
+    "parsingErrors": []
+  }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST</title>
+    </head>
+    <body>
+        <p id="msg"></p>
+        <script>
+            const msg = location.href.match(/[\&\?]msg=([^&]+)/)
+            if (msg) {
+                document.getElementById('msg').innerHTML = decodeURI(msg[1])
+            }
+        </script>
+    </body>
+</html>

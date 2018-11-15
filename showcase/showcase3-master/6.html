@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>TEST</title>
+</head>
+<body>
+<script>
+// 我们怎么加载一个js？
+function require(path, cb) {
+    const script = document.createElement('script')
+    script.src = path
+    script.onload = function () {
+        const factory = require.stack.shift()
+        let module
+        if (typeof factory === 'function') {
+            module = factory()
+        }
+        module = factory
+        require._[path] = module
+        cb(module)
+    }
+    document.body.appendChild(script)
+}
+require._ = {}
+require.stack = []
+
+// 实现一个对应的define
+function define(factory) {
+    require.stack.push(factory)
+}
+
+require('./cases/6.require-no-name.js', function (mod) {
+    console.log(mod())
+})
+</script>
+</body>

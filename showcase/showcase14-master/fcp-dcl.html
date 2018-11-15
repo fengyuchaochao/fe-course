@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    const start = Date.now();
+    const ob = new PerformanceObserver(list => {
+      for (let entry of list.getEntries()) {
+        console.log('-->', entry.name, entry);
+      }
+    });
+    ob.observe({
+      entryTypes: ['paint']
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('-->', 'DOMContentLoaded', Date.now() - start);
+    }, true);
+  </script>
+  <title>fcp-dcl</title>
+</head>
+
+<body>
+  <a href="https://www.linkedin.com/pulse/why-does-page-speed-insights-use-fcp-dcl-priyanka-khanna-1">https://www.linkedin.com/pulse/why-does-page-speed-insights-use-fcp-dcl-priyanka-khanna-1</a>
+  <!-- <script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script> -->
+</body>
+
+</html>

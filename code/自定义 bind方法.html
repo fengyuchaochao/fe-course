@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ﻿if (!Function.prototype.mybind) {
+        Function.prototype.mybind = function () {
+            var _this = this;
+            var context = [].shift.call(arguments);
+            var args = [].slice.call(arguments);
+            return function () {
+                _this.apply(context, args);
+            }
+        }
+    }
+﻿   function func (a, b) {
+        console.log(a, b);
+    }
+
+    var func1 = func.bind(null, 'a', 'b');
+    var func2 = func.mybind(null, 'a', 'b');
+
+    func1();
+    func2();
+
+</script>
+</body>
+</html>
