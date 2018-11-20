@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+    };
+    // console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+    Object.defineProperties(obj, {
+        name1: {
+            value: 'aaa',
+            configurable: false,
+            enumerable: true,
+            writable: true
+        },
+        name2: {
+            value: 'bbb',
+            configurable: false
+        },
+        name3: {
+            value: 'ccc',
+            configurable: true,
+            enumerable: false
+        },
+        name4: {
+            value: 'ddd',
+            configurable: true,
+            enumerable: true,
+            writable: false
+        }
+    });
+    obj.name1 = '12312312';
+    console.log(obj.name1);
+    //
+    // obj.name2 = '111';
+    // console.log(obj.name2);//此时结果还是bbb，设置configurable为false以后，无法再修改其属性特性，包括value
+    // delete obj.name2;
+    // console.log(obj.name2);//此时无法删除name2属性
+    // Object.defineProperty(obj, 'name2', {
+    //     value: '111'
+    // });//Cannot redefine property: name2
+
+
+    // for (var key in obj) {
+    //     console.log(key);
+    // }
+
+
+</script>
+</body>
+</html>

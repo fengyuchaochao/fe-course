@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn (params) {
+        console.log(this);//window
+        console.log(params);//[1,2,3]
+    }
+    Function.prototype.apply2 = function (context, params) {
+        var context = context || window;
+        context.fn = this;
+        context.fn(params);
+        delete context.fn;
+    }
+
+    fn.apply2(null, [1, 2, 3]);
+</script>
+</body>
+</html>

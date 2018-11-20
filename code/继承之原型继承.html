@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Parent () {
+        this.arr = ['a', 'b'];
+    }
+    function Child () {
+
+    }
+
+    Child.prototype = new Parent();
+
+    var child1 = new Child();
+    var child2 = new Child();
+
+    child1.arr.push('c');
+    child2.arr.push('d');
+
+    console.log(child1.arr);
+    console.log(child2.arr);
+
+    //原型继承：即通过 "子构造函数.prototype === new 父构造函数()" 方式 ，将两个函数关联起来，从而子构造函数的实例，就可以父构造函数中的所有属性。
+
+    //缺点：
+    //1：原型中的公共变量被所有实例共享，只有其中一个修改，其他实例获取的值也是修改以后的。
+    //2：在创建Child实例的时候，无法向Parent传值
+
+
+</script>
+</body>
+</html>

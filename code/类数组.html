@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 3, 4, 5];
+    var obj = {
+        0: 'a',
+        1: 'b',
+        2: 'c',
+        3: 'd',
+        length: 4
+    };
+    console.log(Array.prototype.join.call(obj));//a,b,c,d
+    console.log(Array.prototype.slice.call(obj));//['a', 'b', 'c', 'd']
+    console.log(Array.prototype.slice.call(obj, 0, 2));//['a', 'b']
+    console.log(Array.prototype.pop.call(obj));//d
+    console.log(Array.prototype.shift.call(obj));//a
+</script>
+</body>
+</html>
